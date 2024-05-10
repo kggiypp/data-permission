@@ -10,6 +10,7 @@
         <version>1.0.0</version>
     </parent>
     <artifactId>data-permission-spring-boot-starter</artifactId>
+    <name>data-permission-spring-boot-starter</name>
     
     <dependencies>
         <dependency>

@@ -10,6 +10,7 @@
         <version>1.0.0</version>
     </parent>
     <artifactId>data-permission-core</artifactId>
+    <name>data-permission-core</name>
     
     <dependencies>
         <dependency>

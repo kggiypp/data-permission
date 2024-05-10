@@ -8,7 +8,9 @@
     <artifactId>data-permission</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
+    <name>data-permission</name>
     <description>基于mybatis框架开发的一个简单轻便的数据权限隔离插件工具</description>
+    <url>https://github.com/kggiypp/datapermission</url>
     
     <licenses>
         <license>
@@ -33,7 +35,7 @@
     <scm>
         <connection>scm:git:git://github.com/kggiypp/datapermission.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/kggiypp/datapermission.git</developerConnection>
-        <url>https://github.com/kggiypp/datapermission.git</url>
+        <url>https://github.com/kggiypp/datapermission</url>
     </scm>
     
     <issueManagement>
