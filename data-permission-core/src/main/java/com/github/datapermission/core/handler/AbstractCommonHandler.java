@@ -11,7 +11,6 @@ import java.util.Properties;
  * 数据权限控制通用公共逻辑的抽象父类
  * 
  * @author keguang
- * @date 2023/12/23 16:25
  */
 public abstract class AbstractCommonHandler implements PermissionHandler {
     
@@ -25,7 +24,7 @@ public abstract class AbstractCommonHandler implements PermissionHandler {
 
     /**
      * 需要被排除的不执行插件的MappedStatement集合
-     * @param excludeMappedStatementIds
+     * @param excludeMappedStatementIds 要排除的MappedStatementId集合
      */
     public void setExcludeMappedStatementIds(List<String> excludeMappedStatementIds) {
         this.excludeMappedStatementIds = excludeMappedStatementIds;
@@ -33,7 +32,7 @@ public abstract class AbstractCommonHandler implements PermissionHandler {
 
     /**
      * 权限候选字段集合，集合内靠前的候选字段优先匹配
-     * @param candidatePermissionColumns
+     * @param candidatePermissionColumns 候选权限字段集合
      */
     public void setCandidatePermissionColumns(List<String> candidatePermissionColumns) {
         this.candidatePermissionColumns = candidatePermissionColumns;

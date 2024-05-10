@@ -15,7 +15,6 @@ package com.github.datapermission.core.context;
  * </pre>
  * 
  * @author keguang
- * @date 2023/12/24 14:27
  */
 public class DataPermissionLocalSwitch {
     

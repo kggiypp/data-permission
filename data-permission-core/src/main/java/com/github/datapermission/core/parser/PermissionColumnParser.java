@@ -23,7 +23,6 @@ import java.util.Set;
  * 数据权限字段解析类
  * 
  * @author keguang
- * @date 2023/12/26 19:43
  */
 @Slf4j
 public class PermissionColumnParser {
@@ -43,7 +42,7 @@ public class PermissionColumnParser {
 
     /**
      * 解析提取查询sql里包含的权限字段
-     * @param boundSql
+     * @param sql sql
      * @return 权限字段
      */
     public String extractPermissionColumn(String sql) {

@@ -6,7 +6,6 @@ package com.github.datapermission.core.exception;
  * 如果未获取到线程上下文的权限值就会抛出该异常。
  * 
  * @author keguang
- * @date 2024/4/22 14:33
  * @see com.github.datapermission.core.context.DataPermissionContext
  */
 @SuppressWarnings("unused")

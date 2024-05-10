@@ -57,9 +57,11 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         
         <!-- maven插件版本定义 -->
-        <javadoc.plugin.version>3.2.0</javadoc.plugin.version>
+        <compiler.plugin.version>3.1</compiler.plugin.version>
         <source.plugin.version>3.2.0</source.plugin.version>
+        <javadoc.plugin.version>3.2.0</javadoc.plugin.version>
         <gpg.plugin.version>1.6</gpg.plugin.version>
+        <sonatype.plguin.version>0.4.0</sonatype.plguin.version>
         
         <spring-boot.version>2.2.13.RELEASE</spring-boot.version>
         <mybatis.version>3.5.6</mybatis.version>
@@ -115,24 +117,13 @@
         </dependencies>
     </dependencyManagement>
     
-    <distributionManagement>
-        <snapshotRepository>
-            <id>oss</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </snapshotRepository>
-        <repository>
-            <id>oss</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
-    
     <build>
         <pluginManagement>
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${javadoc.plugin.version}</version>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${compiler.plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -141,8 +132,18 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${javadoc.plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-gpg-plugin</artifactId>
                     <version>${gpg.plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <version>${sonatype.plguin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -199,6 +200,16 @@
                                 </goals>
                             </execution>
                         </executions>
+                    </plugin>
+                    <!-- 2024新版发布中央仓库插件 -->
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <tokenAuth>true</tokenAuth>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>

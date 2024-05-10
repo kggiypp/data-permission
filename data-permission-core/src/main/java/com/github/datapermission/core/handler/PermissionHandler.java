@@ -13,30 +13,29 @@ import java.util.Properties;
  * 数据权限处理标准接口
  * 
  * @author keguang
- * @date 2023/12/20 10:40
  */
 public interface PermissionHandler {
     
     /**
      * 判断是否跳过数据权限控制
-     * @param ms
-     * @param parameterObject
-     * @param boundSql
-     * @return
+     * @param ms ms
+     * @param parameterObject parameterObject
+     * @param boundSql boundSql
+     * @return true or false
      */
     boolean skipPermissionCtrl(MappedStatement ms, Object parameterObject, BoundSql boundSql);
 
     /**
      * 进行数据权限处理
-     * @param executor
-     * @param ms
-     * @param parameter
-     * @param rowBounds
-     * @param resultHandler
-     * @param cacheKey
-     * @param boundSql
-     * @return
-     * @throws Exception
+     * @param executor executor
+     * @param ms ms
+     * @param parameter parameter
+     * @param rowBounds rowBounds
+     * @param resultHandler resultHandler
+     * @param cacheKey cacheKey
+     * @param boundSql boundSql
+     * @return 处理结果
+     * @throws Exception exception
      */
     Object handleWithPermission(Executor executor, MappedStatement ms, Object parameter, RowBounds rowBounds,
             ResultHandler<?> resultHandler, CacheKey cacheKey, BoundSql boundSql) throws Exception;
@@ -48,7 +47,7 @@ public interface PermissionHandler {
 
     /**
      * 预留属性扩展方法
-     * @param properties
+     * @param properties properties
      */
     default void setProperties(Properties properties) {}
     

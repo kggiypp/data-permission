@@ -17,7 +17,6 @@ import static org.springframework.boot.ansi.AnsiStyle.NORMAL;
  * 数据权限插件专属banner
  * 
  * @author keguang
- * @date 2024/4/25 14:23
  */
 public class DataPermissionBanner {
     

@@ -17,7 +17,6 @@ import org.apache.ibatis.session.RowBounds;
  * 数据权限处理插件
  *
  * @author keguang
- * @date 2023/12/19 10:49
  */
 @Intercepts(
     {

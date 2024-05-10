@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Configuration;
  * 数据权限插件webFilter配置类
  * 
  * @author keguang
- * @date 2024/4/23 18:33
  */
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnBean(WebMvcAutoConfiguration.class)

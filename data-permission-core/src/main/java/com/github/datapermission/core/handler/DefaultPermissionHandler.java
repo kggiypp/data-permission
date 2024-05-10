@@ -37,7 +37,6 @@ import static org.apache.ibatis.scripting.xmltags.ForEachSqlNode.ITEM_PREFIX;
  * 这种情况就无法执行数据权限隔离插件了
  * 
  * @author keguang
- * @date 2023/12/19 17:40
  */
 public class DefaultPermissionHandler extends AbstractCommonHandler {
 
@@ -89,10 +88,10 @@ public class DefaultPermissionHandler extends AbstractCommonHandler {
 
     /**
      * 修改boundsql附加额外的参数值，以及新增相应的parameterMappings
-     * @param ms
-     * @param boundSql
-     * @param permissionValues
-     * @param cacheKey
+     * @param ms ms
+     * @param boundSql boundSql
+     * @param permissionValues 权限值集合
+     * @param cacheKey cacheKey
      */
     private void processPermissionParameter(MappedStatement ms, BoundSql boundSql, Set<String> permissionValues,
             CacheKey cacheKey, String permissionCloumn) {
@@ -111,9 +110,9 @@ public class DefaultPermissionHandler extends AbstractCommonHandler {
 
     /**
      * 重新构建sql，原始sql加上权限过滤条件
-     * @param boundSql
-     * @param permissionValues
-     * @param permissionCloumn
+     * @param boundSql boundSql
+     * @param permissionValues 权限值集合
+     * @param permissionCloumn 权限字段
      */
     private void rebuildSqlWithPermission(MappedStatement ms, BoundSql boundSql, Set<String> permissionValues,
             String permissionCloumn) {

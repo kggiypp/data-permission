@@ -15,14 +15,13 @@ import java.util.Collection;
  * 标准数据权限过滤器接口
  * 
  * @author keguang
- * @date 2024/4/23 18:55
  */
 public interface DataPermissionFilter extends Filter {
 
     /**
      * 获取当前请求线程的用户权限集合
-     * @param request
-     * @return
+     * @param request httpServletRequest对象
+     * @return 权限集合
      */
     Collection<String> getPermissions(HttpServletRequest request);
 

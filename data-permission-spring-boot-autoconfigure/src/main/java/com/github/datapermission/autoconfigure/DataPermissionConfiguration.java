@@ -27,7 +27,6 @@ import java.util.List;
  * <p>如果需要关闭使用，可在spring配置文件指定 {@code data.permission.enabled=false}
  * 
  * @author keguang
- * @date 2023/12/21 11:18
  */
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnBean(SqlSessionFactory.class)

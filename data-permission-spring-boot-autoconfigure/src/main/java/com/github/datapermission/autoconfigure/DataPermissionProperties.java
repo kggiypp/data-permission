@@ -10,7 +10,6 @@ import java.util.Properties;
  * 数据权限配置文件
  * 
  * @author keguang
- * @date 2024/4/12 10:09
  */
 @Data
 @ConfigurationProperties(prefix = "data.permission")

@@ -11,7 +11,6 @@ import org.apache.ibatis.session.RowBounds;
  * 不做数据权限处理的handler类
  * 
  * @author keguang
- * @date 2023/12/20 15:11
  */
 @SuppressWarnings("unused")
 public class NoPermissionHandler implements PermissionHandler {
