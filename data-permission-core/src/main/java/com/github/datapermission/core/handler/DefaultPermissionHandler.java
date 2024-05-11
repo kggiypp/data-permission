@@ -25,14 +25,14 @@ import static org.apache.ibatis.scripting.xmltags.ForEachSqlNode.ITEM_PREFIX;
 /**
  * 默认的数据权限处理实现类
  * 
- * <p> 根据sql里的候选权限字段（例如：dept_id）来进行数据隔离。
+ * <p>根据sql里的候选权限字段（例如：dept_id）来进行数据隔离。
  * 如果sql没有查询权限字段，则不做任何操作，对原sql没任何影响。
  * 
- * <p> 不要使用通配符 select * 来查询字段！
+ * <p>不要使用通配符 select * 来查询字段！
  * 如果确实有很多层from子句，外层查询可以使用通配符，但不要所有内层全都使用通配符，
  * 例如：select t.* from (select dept_id, col2, col3 from ...) t
  * 
- * 如果所有from子句里都使用通配符查询，则无法通过sql判断出是否查询了dept_id字段，也就不执行数据权限插件处理了，
+ * <p>如果所有from子句里都使用通配符查询，则无法通过sql判断出是否查询了dept_id字段，也就不执行数据权限插件处理了，
  * 例如：select t.* from (select * from ...) t
  * 这种情况就无法执行数据权限隔离插件了
  * 
