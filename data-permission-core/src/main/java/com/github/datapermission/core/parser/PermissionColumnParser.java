@@ -54,10 +54,6 @@ public class PermissionColumnParser {
             log.error("sql解析异常，跳过数据权限处理，堆栈信息：", e);
             return null;
         }
-        if (!(statement instanceof Select)) {
-            // 只处理select类型
-            return null;
-        }
         Select select = (Select) statement;
         // Select可以看作一个root SubSelect，构建root SubSelect
         SubSelect root = new SubSelect();
